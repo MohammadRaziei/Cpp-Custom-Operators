@@ -70,6 +70,15 @@ inline std::vector<T> &operator+=(std::vector<T> &a, const T &b) {
   return a;
 }
 
+template <class T>
+inline std::vector<T> &operator+=(std::vector<T> &a, const std::vector<T> &b) {
+  _lengthError(a, b);
+  size_t vecSize = a.size();
+  for (size_t i = 0; i < vecSize; ++i)
+    a[i] += b[i];
+  return a;
+}
+
 //////// operator -
 
 template <class T1, class T2>
@@ -127,6 +136,15 @@ inline std::vector<T> &operator-=(std::vector<T> &a, const T &b) {
   size_t vecSize = a.size();
   for (size_t i = 0; i < vecSize; ++i)
     a[i] -= b;
+  return a;
+}
+
+template <class T>
+inline std::vector<T> &operator-=(std::vector<T> &a, const std::vector<T> &b) {
+  _lengthError(a, b);
+  size_t vecSize = a.size();
+  for (size_t i = 0; i < vecSize; ++i)
+    a[i] -= b[i];
   return a;
 }
 
@@ -191,6 +209,15 @@ inline std::vector<T> &operator*=(std::vector<T> &a, const T &b) {
   return a;
 }
 
+template <class T>
+inline std::vector<T> &operator*=(std::vector<T> &a, const std::vector<T> &b) {
+  _lengthError(a, b);
+  size_t vecSize = a.size();
+  for (size_t i = 0; i < vecSize; ++i)
+    a[i] *= b[i];
+  return a;
+}
+
 //////// operator /
 
 template <class T1, class T2>
@@ -251,4 +278,12 @@ inline std::vector<T> &operator/=(std::vector<T> &a, const T &b) {
   return a;
 }
 
+template <class T>
+inline std::vector<T> &operator/=(std::vector<T> &a, const std::vector<T> &b) {
+  _lengthError(a, b);
+  size_t vecSize = a.size();
+  for (size_t i = 0; i < vecSize; ++i)
+    a[i] /= b[i];
+  return a;
+}
 #endif // CUSTOMOPERATORS_H

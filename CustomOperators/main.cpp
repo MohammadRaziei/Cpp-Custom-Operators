@@ -20,9 +20,11 @@ int main(int argc, char *argv[]) {
   QCoreApplication app(argc, argv);
   std::vector<int> a{1, 2, 3};
   std::vector<std::complex<float>> b{0.5, 0.5, 0.5};
+  //  std::vector<int> c{1, 2, 3};
   show(a);
   show(b);
   show(a * b);
+  show(a *= a);
   show(a *= 2);
   show(a[1]);
   return app.exec();
