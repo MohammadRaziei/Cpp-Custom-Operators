@@ -22,8 +22,8 @@ int main(int argc, char *argv[]) {
   std::vector<std::complex<float>> b{0.5, 0.5, 0.5};
   show(a);
   show(b);
-  show(a + b);
-  show(a);
+  show(a * b);
+  show(a *= 2);
   show(a[1]);
   return app.exec();
 }

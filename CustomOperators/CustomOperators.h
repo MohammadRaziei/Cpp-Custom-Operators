@@ -83,7 +83,6 @@ template <class T1, class T2>
 inline std::complex<typename std::common_type<T1, T2>::type>
 operator-(T1 a, std::complex<T2> b) {
   typedef typename std::common_type<T1, T2>::type T;
-
   return static_cast<std::complex<T>>(a) - static_cast<std::complex<T>>(b);
 }
 
@@ -110,6 +109,7 @@ operator-(const std::vector<T1> &a, const T2 &b) {
     v[i] = a[i] - bb;
   return v;
 }
+
 template <class T1, class T2>
 inline std::vector<typename std::common_type<T1, T2>::type>
 operator-(const T2 &b, const std::vector<T1> &a) {
